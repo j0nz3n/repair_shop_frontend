@@ -1,2 +1,38 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+.navbar{
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: .25fr 1fr;
+    grid-template-areas: 
+    "sidebar content";
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: cornflowerblue;
+    height: 100%;
+    padding-top: 5%;
+
+    ul {
+        list-style-type: none;
+        font-size: 1em;
+        padding: 0 10% 10% 10%;
+    }
+
+    li:hover {
+        background-color: rgba($color: #000000, $alpha: .65);
+        color: white;
+
+    }
+}
+
+.content {
+    grid-area: content;
+    height: 100%;
+}
