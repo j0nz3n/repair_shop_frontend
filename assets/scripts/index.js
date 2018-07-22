@@ -11,4 +11,5 @@ const authEvents = require('../auth/events')
 
 $(() => {
   authEvents.addHandlers()
+  $('.main').css('display', 'block')
 })

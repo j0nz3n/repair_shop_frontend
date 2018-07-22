@@ -1,18 +1,19 @@
 'use strict'
 
 const store = require('../scripts/store')
+const sidebarTemplate = require('../scripts/templates/signed-in.handlebars')
 
 const signUpSuccess = function (data) {
-  $('#message').text('Signed up successfully')
-  $('#message').css('background-color', 'green')
+  // $('#auth-modal').remove()
+  // $('.main').css('display', 'grid')
   console.log('signUpSuccess ran. Data is:', data)
 }
 
 const signInSuccess = function (data) {
-  $('#message').text('Signed in successfully')
-  $('#message').css('background-color', 'green')
-  // console.log('signInSuccess ran. Token is:' + data.user.token)
+  $('.main').css('display', 'grid')
+  $('#auth-modal').remove()
   store.user = data.user
+  $('.main').append(sidebarTemplate)
 }
 
 const changePasswordSuccess = function () {

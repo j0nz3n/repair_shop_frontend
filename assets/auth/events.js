@@ -3,8 +3,10 @@
 const getFormFields = require('../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+const authTemplate = require('../scripts/templates/auth.handlebars')
 // const modal = require('./modal')
 
+$('.content').append(authTemplate)
 
 const onSignUp = function (event) {
   event.preventDefault()
