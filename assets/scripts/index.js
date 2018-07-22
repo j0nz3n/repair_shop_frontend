@@ -7,9 +7,10 @@
 // require('./example')
 
 const authEvents = require('../auth/events')
+const userEvents = require('../user/events')
 
 
 $(() => {
-  authEvents.addHandlers()
+  authEvents.authHandlers()
   $('.main').css('display', 'block')
 })

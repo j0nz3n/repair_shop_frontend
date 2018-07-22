@@ -11,9 +11,10 @@ $('.content').append(authTemplate)
 
 const onSignUp = function (event) {
   event.preventDefault()
-  console.log('Sign up ran!')
+  // console.log('Sign up ran!')
   
   const data = getFormFields(this) // this === event.target 
+  console.log(data)
   api.signUp(data)
   .then(ui.signUpSuccess)
   .catch(ui.failure)
@@ -56,7 +57,7 @@ const displayModal = (event) => {
 
 }
 
-const addHandlers = () => {
+const authHandlers = () => {
   $('#sign-up-form').on('submit', onSignUp)
   $('#sign-in-form').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
@@ -66,5 +67,5 @@ const addHandlers = () => {
 }
 
 module.exports = {
-  addHandlers
+  authHandlers
 }
