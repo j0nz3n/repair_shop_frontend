@@ -8,9 +8,15 @@
 
 const authEvents = require('../auth/events')
 const userEvents = require('../user/events')
+const content = $('.content')
+// const contentLength = 0
 
 
 $(() => {
   authEvents.authHandlers()
+  userEvents.userHandlers()
+  $('.sidebar').css('display', 'none')
+  $('.wrapper').css('display', 'none')
   $('.main').css('display', 'block')
+  console.log(content.length)
 })

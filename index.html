@@ -1,31 +1,85 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <title>Repair Shop</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <title>Repair Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Do not add `link` tags-->
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <!-- Do not add `link` tags-->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-  <!-- Do not add `script` tags-->
-  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-</head>
+    <!-- Do not add `script` tags-->
+    <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  </head>
 
-<body>
+  <body>
 
-  <nav class="navbar navbar-inverse" role="navigation">
-    <a class="navbar-brand" href="#">My Repair Shop</a>
-  </nav>
+    <nav class="navbar navbar-inverse" role="navigation">
+      <a class="navbar-brand" href="#">My Repair Shop</a>
+    </nav>
 
-  <div class="main">
+    <div class="main">
 
-    <div class="content"></div>
-  </div>
+      <div class="content">
+        
+        <!-- Settings  -->
+        <div class="wrapper wrapper-settings">
+          <h1>Settings</h1>
+          <hr>
+          <ul>
+            <li id="change-password">Change Password</li>
+            <li id="sign-out">Sign out</li>
+          </ul>
+        </div>
+        
+        <!-- Devices  -->
+        <div class="wrapper wrapper-devices">
+          <h1>Devices</h1>
+          <hr>
+          <ul>
+            <li id="device-show-all">My Devices</li>
+            <li id="device-add">Add a Device</li>
+          </ul>
+        </div>
+       
+        <!-- Repairs  -->
+        <div class="wrapper wrapper-repairs">
+          <h1>Repairs</h1>
+          <hr>
+          <ul>
+            <li id="repairs-show-all">My Repairs</li>
+          </ul>
+        </div>
+        
+        <!-- Appoiments  -->
+        <div class="wrapper wrapper-appointments">
+          <h1>Appointments</h1>
+          <hr>
+          <ul>
+            <li id="appointments-show-all">My Apppointments</li>
+            <li id="appointment-add">Make an appointment</li>
+          </ul>
+        </div>
 
+        
+      </div>
 
+      <div class="sidebar">
+          <ul class="sidebar-nav">
+            <br />
+            <li id="appointments">Appointments</li>
+            <br />
+            <li id="repairs">Repairs</li>
+            <br />
+            <li id="devices">My Devices</li>
+            <br />
+            <li id="settings">Settings</li>
+          </ul>
+        </div>
+      </div>
 
-</body>
+    </div>
+  </body>
 
 </html>

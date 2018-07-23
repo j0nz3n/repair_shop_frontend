@@ -4,17 +4,18 @@ const store = require('../scripts/store')
 const sidebarTemplate = require('../scripts/templates/sidebar.handlebars')
 // const userEvents = require('../user/events')
 
-const signUpSuccess = function (data) {
+const signUpSuccess = function () {
   $('#auth-modal').remove()
   $('.main').css('display', 'grid')
-  $('.main').append(sidebarTemplate)
+  // $('.sidebar').css('display', 'block')
+
 }
 
 const signInSuccess = function (data) {
   $('.main').css('display', 'grid')
   $('#auth-modal').remove()
   store.user = data.user
-  $('.main').append(sidebarTemplate)
+  $('.sidebar').toggle('display')
 }
 
 const changePasswordSuccess = function () {
@@ -22,6 +23,7 @@ const changePasswordSuccess = function () {
 
 const signOutSuccess = function () {
   store.user = null
+  location.reload()
 }
 
 const failure = function (error) {
