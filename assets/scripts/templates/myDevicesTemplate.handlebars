@@ -1,0 +1,11 @@
+{{#each devices as |device|}}
+<div data-id="{{device.id}}">
+    <h3 data-id="{{device.id}}">{{device.model}}</h3>
+    <ul data-id="{{device.id}}">
+        <li><b>Make:</b> {{device.make}}</li>
+        <li><b>Model:</b> {{device.model}}</li>
+        <li><b>Serial Number:</b> {{device.serial_number}}</li>
+    </ul>
+</div>
+
+{{/each}}

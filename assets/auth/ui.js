@@ -1,14 +1,13 @@
 'use strict'
 
 const store = require('../scripts/store')
-const sidebarTemplate = require('../scripts/templates/sidebar.handlebars')
-// const userEvents = require('../user/events')
+const userEvents = require('../user/events')
+const authTemplate = require('../scripts/templates/auth.handlebars')
 
 const signUpSuccess = function () {
   $('#auth-modal').remove()
-  $('.main').css('display', 'grid')
-  // $('.sidebar').css('display', 'block')
-
+  $('.content').append(authTemplate)
+  // Need more work!
 }
 
 const signInSuccess = function (data) {
