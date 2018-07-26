@@ -85,7 +85,6 @@ const onShowEditDevice = (event) => {
     
 }
 const onEditDevice = (event) => {
-    debugger
     event.preventDefault()
     const data = getFormFields(event.target)
     console.log(data)

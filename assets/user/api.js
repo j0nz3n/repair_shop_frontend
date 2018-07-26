@@ -33,7 +33,6 @@ const editDevice = (data, deviceId) => {
 }
 
 const deleteDevice = (deviceID) => {
-    //  debugger
     return $.ajax({
         url: config.apiUrl + '/devices/' + deviceID,
         method: 'DELETE',
