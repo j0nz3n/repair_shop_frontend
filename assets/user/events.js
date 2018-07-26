@@ -58,12 +58,12 @@ const onAddDevice = (event) => {
     const data = getFormFields(event.target)
 
     api.addDevice(data)
-        .then(ui.addDeviceSuccess)
+        .then(onShowMyDevices)
         .catch(ui.failure)
 }
 
 const onShowEditDevice = (event) => {
-    event.preventDefault()
+    // event.preventDefault()
     clearContent()
     let template, target = $(event.target).parents('ul').attr('data-id')
     store.devices.forEach((device) => {
@@ -80,19 +80,18 @@ const onShowEditDevice = (event) => {
             </div>`
         }
     })
-    debugger
     $('.tmp-container').css('display', 'block').append(template)
-    
 }
+
 const onEditDevice = (event) => {
     event.preventDefault()
     const data = getFormFields(event.target)
-    console.log(data)
-    // const deviceId = $(event.target).closest('ul').attr('data-id')
+    // console.log(data)
+    const deviceId = $(event.target).closest('ul').attr('data-id')
 
-    // api.editDevice(data, deviceId)
-    // .then(onShowMyDevices)
-    // .catch(ui.failure)
+    api.editDevice(data, deviceId)
+        .then(onShowMyDevices)
+        .catch(ui.failure)
 }
 
 const onDeleteDevice = (event) => {
@@ -104,14 +103,31 @@ const onDeleteDevice = (event) => {
 }
 
 // REPAIRS
-const onShowRepairs = () => {
-    clearContent()
-    $('.wrapper-repairs').css('display', 'block')
-}
+// const onShowRepairs = () => {
+//     clearContent()
+//     $('.wrapper-repairs').css('display', 'block')
+// }
 
-const onShowRepairRequest = () => {
+const onShowRepairRequest = (event) => {
     clearContent()
-    $('.wrapper-my-repairs').css('display', 'block')
+    let template, target = $(event.target).parents('ul').attr('data-id')
+    store.devices.forEach((device) => {
+        if (device.id == target) {
+            template = `<div class="tmp">
+            <h1>Update Device Information</h1>
+            <hr>
+            <form id="repair-form" class="border">
+            <input type="text" name="repair[make]" value="${device.make}">
+            <input type="text" name="repair[model]" value="${device.model}">
+            <input type="text" name="repair[serial_number]" value="${device.serial_number}">
+            <textarea placeholder="What is wrong with this device?" name="repair[complaint]" ></textarea>
+            <input type="submit" value="Request a Repair">
+            </form>
+            </div>`
+        }
+    })
+    $('.tmp-container').css('display', 'block').append(template)
+    // $('.wrapper-my-repairs').css('display', 'block')
 }
 
 const onShowMyRepairs = function () {
@@ -137,15 +153,16 @@ const userHandlers = () => {
     $('#change-pw').click(onShowChangePW)
     $('#sign-out').click(onSignOut)
     $('#devices').click(onShowDevices)
+    $('#home').click(clearContent)
     $('#device-show-all').click(onShowMyDevices)
     $('#device-add').click(onShowAddDevice)
     $('#add-device-form').on('submit', onAddDevice)
     $('#edit-device-form').on('submit', onEditDevice)
-    $('#repairs').click(onShowRepairs)
     $('#repairs-show-all').click(onShowRepairRequest)
     $('#repairs-open').click(onShowMyRepairs)
     $('.tmp-container').on('click', "button[id^='device-edit']", onShowEditDevice)
     $('.tmp-container').on('click', "button[id^='device-minus']", onDeleteDevice)
+    $('.tmp-container').on('click', "button[id^='device-repair']", onShowRepairRequest)
     // $('#appointments').click(onShowAppointments)
 }
 

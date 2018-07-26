@@ -3,6 +3,7 @@
 const store = require('../scripts/store')
 const myDevicesTemplate = require('../scripts/templates/myDevicesTemplate.handlebars')
 
+
 const myDevicesSuccess = function (data) {
     // Show only the devices thats belong to current_user and ad them to the store
     // Is ther a way to do this on the backedend instead? new mehod
@@ -24,7 +25,7 @@ const myDevicesSuccess = function (data) {
 
 const addDeviceSuccess = (data) => {
     store.device = data.device
-    // Display success to user
+
 }
 
 const editDeviceSuccess = () => {
