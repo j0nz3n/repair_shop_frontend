@@ -2,40 +2,52 @@
 
 const store = require('../scripts/store')
 const myDevicesTemplate = require('../scripts/templates/myDevicesTemplate.handlebars')
-const events = require('./events')
-
 
 const myDevicesSuccess = function (data) {
-    // debugger
-    // (myDevicesHTML = myDevicesTemplate(({
-    //     devices: element
-    // })))
-    let myDevicesHTML = undefined
+    // Show only the devices thats belong to current_user and ad them to the store
+    // Is ther a way to do this on the backedend instead? new mehod
+    let handlebarsTemplate, myDevicesHTML = {}
     for (const key in data) {
-      data[key].forEach(element => {
-          store.user.id==element.user_id? 
-          myDevicesHTML= element
-          :''
-      });
+        data[key].forEach(device => {
+            store.user.id == device.user_id ?
+                myDevicesHTML[device.id] = device :
+                ''
+            store.user.id == device.user_id ? store.devices.push(device) : ''
+        });
     }
-    console.log(myDevicesHTML)
-    // events.clearContent()
-    $('.content').append(`<p>${JSON.stringify(myDevicesHTML)}</p>`)
-    // process the returned JSON!
+    // console.log(store)
+    handlebarsTemplate = myDevicesTemplate({
+        devices: myDevicesHTML
+    })
+    $('.tmp-container').css('display', 'block').append(handlebarsTemplate)
 }
 
 const addDeviceSuccess = (data) => {
     store.device = data.device
-    console.log(store.device)
+    // Display success to user
+}
+
+const editDeviceSuccess = () => {
+    // Display success to user
+}
+
+
+const myRepairsSuccess = (data) => {
+    console.log(data)
+}
+
+const deleteSuccess = () => {
+    console.log("Delete Successful")
 }
 
 const failure = function (error) {
-    // $('#message').text('Error on sign out')
-    // $('#message').css('background-color', 'red')
     console.log('failure ran. Data is:', error)
 }
 module.exports = {
     myDevicesSuccess,
     addDeviceSuccess,
+    editDeviceSuccess,
+    myRepairsSuccess,
+    deleteSuccess,
     failure
 }

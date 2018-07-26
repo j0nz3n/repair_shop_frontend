@@ -4,12 +4,12 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 .navbar{
     margin-bottom: 0;
-    border-radius: 0;
+    // border-radius: 0;
 }
 
 .main {
     display: grid;
-    grid-template-columns: .25fr 1fr;
+    grid-template-columns: auto 1fr;
     grid-template-areas: 
     "sidebar content";
 }
@@ -17,25 +17,24 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 ul {
     list-style-type: none;
     font-size: 1em;
-    padding: 0 10% 10% 10%;
+    padding: 0 10%;
 }
 
 li {
-    padding: 10px 10px;
+    padding: auto auto;
 }
 
-li:hover {
-    background-color: rgba($color: #000000, $alpha: .65);
-    color: white;
+.sidebar, li:hover {
+    background-color: rgba($color: #000000, $alpha: .40);
+    // color: white;
     transition: all ease-in-out 250ms;
-
 }
 
 .sidebar {
     grid-area: sidebar;
-    background-color: cornflowerblue;
+    // background-color: cornflowerblue;
     height: 100%;
-    padding-top: 5%;
+    // padding-top: 5%;
 
 }
 
@@ -44,11 +43,19 @@ li:hover {
     height: 100%;
 }
 
-.wrapper { 
-    
-    
-}
+// .wrapper { 
+
+// }
 
 h1 {
     padding-left: 5%;
+}
+
+// Paying homage to http://glyphicons.com/
+.glyphicon {
+    font-size: 1em;
+}
+
+.tmp h1 {
+    padding-left: 5%; 
 }

@@ -1,6 +1,8 @@
 'use strict'
 
-const store = {
+const store = { user: Object(),
+                devices: Array(),
+                repairs: Object()
 }
 
 module.exports = store

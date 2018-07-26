@@ -1,11 +1,46 @@
 {{#each devices as |device|}}
-<div data-id="{{device.id}}">
+<div class="tmp" data-id="{{device.id}}">
     <h3 data-id="{{device.id}}">{{device.model}}</h3>
     <ul data-id="{{device.id}}">
-        <li><b>Make:</b> {{device.make}}</li>
-        <li><b>Model:</b> {{device.model}}</li>
-        <li><b>Serial Number:</b> {{device.serial_number}}</li>
+        <li>
+            <b>Make:</b> {{device.make}}</li>
+        <li>
+            <b>Model:</b> {{device.model}}</li>
+        <li>
+            <b>Serial Number:</b> {{device.serial_number}}
+        </li>
+        <BR />
+        <li>
+            <div class="btn-wrapper">
+                <button id="device-minus" class="btn" type="submit">
+                    <span class="glyphicon glyphicon-minus"></span>
+                </button>
+                <button id="device-edit" class="btn" type="submit">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </button>
+            </div>
+        </li>
     </ul>
+    <style>
+        .tmp {
+            background-color: powderblue;
+            max-width: 200px;
+            height: 230px;
+            float: left;
+            margin: 10px 10px;
+            padding: 10px 10px;
+            border-radius: 5px;
+        }
+
+        h3 {
+            padding: 10px 10px;
+            margin: auto 10px;
+        }
+
+        .btn {
+            margin: 0 2% 2% 2%;
+        }
+    </style>
 </div>
 
-{{/each}}
+ {{/each}}
