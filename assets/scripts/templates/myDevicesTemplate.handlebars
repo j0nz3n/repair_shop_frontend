@@ -1,7 +1,7 @@
 {{#each devices as |device|}}
-<div class="tmp" data-id="{{device.id}}">
-    <h3 data-id="{{device.id}}">{{device.model}}</h3>
-    <ul data-id="{{device.id}}">
+<div class="tmp card" data-id="{{device.id}}">
+    <h3 class="card-title" data-id="{{device.id}}">{{device.model}}</h3>
+    <ul class="card-text" data-id="{{device.id}}">
         <li>
             <b>Make:</b> {{device.make}}</li>
         <li>
