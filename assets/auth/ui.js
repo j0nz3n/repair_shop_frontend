@@ -12,9 +12,11 @@ const signUpSuccess = function () {
 
 const signInSuccess = function (data) {
   $('.main').css('display', 'grid')
-  $('#auth-modal').remove()
+  $('#auth-modal').hide()
   store.user = data.user
   $('.sidebar').toggle('display')
+  $('#sign-in-form')[0].reset()
+  $('#sign-up-form')[0].reset()
 }
 
 const changePasswordSuccess = function () {
@@ -22,7 +24,9 @@ const changePasswordSuccess = function () {
 
 const signOutSuccess = function () {
   store.user = null
-  location.reload()
+  $('.wrapper').css('display', 'none')
+  $('.main').css('display', 'block')
+  $('#auth-modal').show()
 }
 
 const failure = function (error) {
