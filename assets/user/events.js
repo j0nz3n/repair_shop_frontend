@@ -30,7 +30,7 @@ const onShowChangePW = () => {
 const onSignOut = function (event) {
     event.preventDefault()
 
-    authAPI.signOut
+    authAPI.signOut()
         .then(authUI.signOutSuccess)
         .catch(authUI.failure)
 }
@@ -167,7 +167,7 @@ const userHandlers = () => {
     $('#device-show-all').click(onShowMyDevices)
     $('#device-add').click(onShowAddDevice)
     $('#add-device-form').on('submit', onAddDevice)
-    // $('#repairs-show-all').click(onShowRepairRequest)
+    $('#repairs-show-all').click(onShowRepairOrder)
     $('#repairs-open').click(onShowMyRepairs)
     $('.tmp-container').on('click', "button[id^='device-edit']", onShowEditDevice)
     $('.tmp-container').on('click', "button[id^='device-minus']", onDeleteDevice)

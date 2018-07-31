@@ -34,7 +34,7 @@ const editDeviceSuccess = () => {
 
 
 const myRepairsSuccess = (data) => {
-    console.log(data)
+    
 }
 
 const createRepairSuccess = (data) => {
@@ -60,3 +60,35 @@ module.exports = {
     deleteSuccess,
     failure
 }
+
+
+{/* <nav class="navbar navbar-inverse" role="navigation">
+<a class="navbar-brand" href="#">My Repair Shop</a>
+    <!-- Navbar -->
+    <div class="container">
+      <ul class="nav">
+        <br />
+        <li class="nav-li" id="home">
+          <button class="btn btn-default btn-lrg">
+            <span class="glyphicon glyphicon-home"></span>
+          </button>
+            Home
+        </li>
+        <br />
+        <li class="nav-li" id="devices">
+          <button class="btn btn-default btn-lrg">
+            <span class="glyphicon glyphicon-phone"></span>
+          </button>
+          Devices
+        </li>
+        <br />
+        <li class="nav-li" id="settings">
+          <button class="btn btn-default btn-lrg">
+            <span class="glyphicon glyphicon-cog"></span>
+          </button>
+          Settings
+        </li>
+        <br />
+      </ul>
+    </div>
+</nav> */}

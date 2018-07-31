@@ -13,5 +13,5 @@ $(() => {
   authEvents.authHandlers()
   userEvents.userHandlers()
   $('.wrapper').css('display', 'none')
-  $('.main').css('display', 'block')
+  // $('.main').css('display', 'block')
 })

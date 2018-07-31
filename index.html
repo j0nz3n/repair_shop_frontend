@@ -15,81 +15,147 @@
 
 <body>
 
-  <nav class="navbar navbar-inverse" role="navigation">
-    <a class="navbar-brand" href="#">My Repair Shop</a>
+  <nav class="navbar navbar-inverse" style="display: none;">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse"
+          aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#" id="home">My Repair Shop</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              Devices
+              <!-- <span class="caret"></span> -->
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#" id="device-show-all">
+                  My Devices
+                </a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li>
+                <a href="#" id="device-add">
+                  Add New Device
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              Repairs
+            </a>
+            <ul class="dropdown-menu">
+              <li id="repairs-show-all">
+                <a href="#">
+                  My Repairs
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              Settings
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#" id="change-pw">Change Password</a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li>
+                <a href="#" id="sign-out">Sign Out</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
   </nav>
 
-  <div class="main">
+  <!-- <div class="main"> -->
 
-    <div class="content">
-      
-      <div class="tmp-container"></div>
+  <div class="content">
 
-      <!-- Settings  -->
-      <div class="wrapper wrapper-settings">
-        <h1>Settings</h1>
-        <hr>
-        <ul>
-          <li id="change-pw">Change Password</li>
-          <li id="sign-out">Sign out</li>
-        </ul>
-      </div>
+    <div class="tmp-container"></div>
 
-      <!-- Devices  -->
-      <div class="wrapper wrapper-devices">
-        <h1>Devices</h1>
-        <hr>
-        <ul>
-          <li id="device-show-all">My Devices</li>
-          <li id="device-add">Add a Device</li>
-        </ul>
-      </div>
+    <!-- Settings  -->
+    <!-- <div class="wrapper wrapper-settings">
+      <h1>Settings</h1>
+      <hr>
+      <ul>
+        <li id="change-pw">Change Password</li>
+        <li id="sign-out">Sign out</li>
+      </ul>
+    </div> -->
 
-      <!-- Repairs  -->
-      <div class="wrapper wrapper-repairs">
-        <h1>Repairs</h1>
-        <hr>
-        <ul>
-          <li id="repairs-show-all">Repair Request</li>
-          <li id="repairs-open">Repairs</li>
-        </ul>
-      </div>
+    <!-- Devices  -->
+    <div class="wrapper wrapper-devices">
+      <h1>Devices</h1>
+      <hr>
+      <ul>
+        <li id="device-show-all">My Devices</li>
+        <li id="device-add">Add a Device</li>
+      </ul>
+    </div>
 
-      <!-- Change Password -->
-      <div class="wrapper wrapper-change-pw">
-        <form id="change-password" class="border">
-          <input type="password" name="passwords[old]" placeholder="Current Password">
-          <input type="password" name="passwords[new]" placeholder="New Password">
-          <input type="submit" value="Change Password">
-        </form>
-      </div>
+    <!-- Repairs  -->
+    <div class="wrapper wrapper-repairs">
+      <h1>Repairs</h1>
+      <hr>
+      <ul>
+        <li id="repairs-show-all">Repair Request</li>
+        <li id="repairs-open">Repairs</li>
+      </ul>
+    </div>
 
-      <!-- Add Device -->
-      <div class="wrapper wrapper-add-device">
-        <h1>Add a New Device</h1>
-        <hr>
-        <form id="add-device-form" class="border">
-          <input type="text" name="device[make]" placeholder="Make">
-          <input type="text" name="device[model]" placeholder="Model">
-          <input type="text" name="device[serial_number]" placeholder="Serial Number">
-          <input type="submit" value="Add Device">
-        </form>
-      </div>
-      
-      <!-- Edit Device -->
-      <div class="wrapper wrapper-edit-device">
-        <h1>Update Device Information</h1>
-        <hr>
-        <form id="edit-device-form" class="border">
-          <input type="text" name="device[make]" placeholder="Make">
-          <input type="text" name="device[model]" placeholder="Model">
-          <input type="text" name="device[serial_number]" placeholder="Serial Number">
-          <input type="submit" value="Edit Device">
-        </form>
-      </div>
+    <!-- Change Password -->
+    <div class="wrapper wrapper-change-pw">
+      <form id="change-password" class="border">
+        <input type="password" name="passwords[old]" placeholder="Current Password">
+        <input type="password" name="passwords[new]" placeholder="New Password">
+        <input type="submit" value="Change Password">
+      </form>
+    </div>
 
-      <!-- Add Repair -->
-      <!-- <div class="wrapper wrapper-my-repairs">
+    <!-- Add Device -->
+    <div class="wrapper wrapper-add-device">
+      <h1>Add a New Device</h1>
+      <hr>
+      <form id="add-device-form" class="border">
+        <input type="text" name="device[make]" placeholder="Make">
+        <input type="text" name="device[model]" placeholder="Model">
+        <input type="text" name="device[serial_number]" placeholder="Serial Number">
+        <input type="submit" value="Add Device">
+      </form>
+    </div>
+
+    <!-- Edit Device -->
+    <div class="wrapper wrapper-edit-device">
+      <h1>Update Device Information</h1>
+      <hr>
+      <form id="edit-device-form" class="border">
+        <input type="text" name="device[make]" placeholder="Make">
+        <input type="text" name="device[model]" placeholder="Model">
+        <input type="text" name="device[serial_number]" placeholder="Serial Number">
+        <input type="submit" value="Edit Device">
+      </form>
+    </div>
+
+    <!-- Add Repair -->
+    <!-- <div class="wrapper wrapper-my-repairs">
         <h1>Request a Repair</h1>
         <hr>
         <form id="repair-form" class="border">
@@ -101,34 +167,11 @@
       </div> -->
 
 
-    </div>
-
-    <!-- Sidebar -->
-    <div class="wrapper sidebar">
-      <ul class="sidebar-nav">
-        <br />
-        <li id="home">
-          <button class="btn btn-default btn-lrg">
-            <span class="glyphicon glyphicon-home"></span>
-          </button>
-        </li>
-        <br />
-        <li id="devices">
-          <button class="btn btn-default btn-lrg">
-            <span class="glyphicon glyphicon-phone"></span>
-          </button>
-        </li>
-        <br />
-        <li id="settings">
-          <button class="btn btn-default btn-lrg">
-            <span class="glyphicon glyphicon-cog"></span>
-          </button>
-        </li>
-        <br />
-      </ul>
-    </div>
-
   </div>
+
+
+
+  <!-- </div> -->
 
 </body>
 

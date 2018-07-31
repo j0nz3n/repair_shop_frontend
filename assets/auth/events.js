@@ -46,6 +46,7 @@ const onSignOut = function (event) {
   
   api.signOut()
   .then(ui.signOutSuccess)
+  .then()
   .catch(ui.failure)
 }
 

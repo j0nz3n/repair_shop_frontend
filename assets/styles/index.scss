@@ -5,39 +5,60 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 .navbar{
     margin-bottom: 0;
-}
 
-.main {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-areas: 
-    "sidebar content";
+    li {
+        color: white;
+    }
 }
+// ul#navbar-nav {
+    
+//     display: inline;
+//     padding: 0 0;
+//     float: right;
+// }
+// .nav-li{
+//     padding: 0;
+
+// }
+
+// .main {
+//     display: grid;
+//     grid-template-columns: auto 1fr;
+//     grid-template-areas: 
+//     "sidebar content";
+// }
+
+
 
 ul {
     list-style-type: none;
     font-size: 1em;
-    padding: 0 10%;
+    // padding: 0 10%;
 }
 
-li {
-    padding: auto auto;
-}
+// li {
+//     display: inline-block;
+//     padding: 0 0;
+// }
 
-.sidebar,li:hover {
-    background-color: rgba($color: #000000, $alpha: .40);
-    transition: all ease-in-out 250ms;
-}
+// li:hover {
+//     background-color: rgba($color: #000000, $alpha: .40);
+//     transition: all ease-in-out 250ms;
+// }
 
-.sidebar {
-    grid-area: sidebar;
-    min-height: 100vh;
-}
+// .sidebar {
+//     grid-area: sidebar;
+//     // min-height: 100vh;
 
-.content {
-    grid-area: content;
-    height: 100%;
-}
+//     &li {
+//         display: inline-block;
+//     }
+// }
+
+// .content {
+//     grid-area: content;
+//     height: 100%;
+// }
 
 // .wrapper { 
 
@@ -56,6 +77,11 @@ h1 {
     
     h1 {
         padding-left: 5%; 
+    }
+    
+    li:hover {
+    background-color: rgba($color: #000000, $alpha: .40);
+    transition: all ease-in-out 250ms;
     }
 }
 

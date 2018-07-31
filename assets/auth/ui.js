@@ -11,10 +11,9 @@ const signUpSuccess = function () {
 }
 
 const signInSuccess = function (data) {
-  $('.main').css('display', 'grid')
   $('#auth-modal').hide()
   store.user = data.user
-  $('.sidebar').toggle('display')
+  $('.navbar').toggle('display')
   $('#sign-in-form')[0].reset()
   $('#sign-up-form')[0].reset()
 }
@@ -24,14 +23,14 @@ const changePasswordSuccess = function () {
 
 const signOutSuccess = function () {
   store.user = null
+  userEvents.clearContent()
   $('.wrapper').css('display', 'none')
   $('.main').css('display', 'block')
+  $('.navbar').toggle('display')
   $('#auth-modal').show()
 }
 
 const failure = function (error) {
-  // $('#message').text('Error on sign out')
-  // $('#message').css('background-color', 'red')
   console.log('failure ran. Data is:', error)
 }
 
