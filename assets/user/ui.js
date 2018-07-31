@@ -37,6 +37,13 @@ const myRepairsSuccess = (data) => {
     console.log(data)
 }
 
+const createRepairSuccess = (data) => {
+    const template = `<div class="tmp">
+                        <h1>Repair Order Created Successfully</h1>
+                      </div>`
+    $('.tmp-container').css('display', 'block').append(template)
+}
+
 const deleteSuccess = () => {
     console.log("Delete Successful")
 }
@@ -49,6 +56,7 @@ module.exports = {
     addDeviceSuccess,
     editDeviceSuccess,
     myRepairsSuccess,
+    createRepairSuccess,
     deleteSuccess,
     failure
 }

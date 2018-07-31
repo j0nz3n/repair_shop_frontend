@@ -45,7 +45,21 @@ const deleteDevice = (deviceID) => {
 const myRepairs = () => {
     return $.ajax({
         url: config.apiUrl + '/repair_orders',
-        method: 'GET'
+        method: 'GET',
+        headers: {
+            Authorization: 'Token token=' + store.user.token
+        }
+    })
+}
+
+const createRepair = (data) => {
+    return $.ajax({
+        url: config.apiUrl + '/repair_orders',
+        method: 'POST',
+        headers: {
+            Authorization: 'Token token=' + store.user.token
+        },
+        data
     })
 }
 
@@ -54,5 +68,6 @@ module.exports = {
     addDevice,
     editDevice,
     deleteDevice,
-    myRepairs
+    myRepairs,
+    createRepair
 }
