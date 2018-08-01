@@ -1,0 +1,41 @@
+{{#each repair_orders as |repair|}}
+<div class="tmp card" data-id="{{repair.id}}">
+    <h3 class="card-title" data-id="{{repair.id}}">{{repair.model}}</h3>
+    <ul class="card-text" data-id="{{repair.id}}">
+        <li>
+            <b>Make:</b> {{repair.make}}</li>
+        <li>
+            <b>Model:</b> {{repair.model}}</li>
+        <li>
+            <b>Serial Number:</b> {{repair.serial_number}}
+        </li>
+        <BR />
+        <li>
+            <b>Complaint:</b> {{repair.complaint}}
+        </li>
+
+
+    </ul>
+    <style>
+        .tmp {
+            background-color: powderblue;
+            max-width: 230px;
+            height: 230px;
+            float: left;
+            margin: 10px 10px;
+            padding: 10px 10px;
+            border-radius: 5px;
+        }
+
+        h3 {
+            padding: 10px 10px;
+            margin: auto 10px;
+        }
+
+        .btn {
+            margin: 0 2% 2% 2%;
+        }
+    </style>
+</div>
+
+{{/each}}

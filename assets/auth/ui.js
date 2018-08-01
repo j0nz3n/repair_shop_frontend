@@ -24,6 +24,11 @@ const changePasswordSuccess = function () {
 const signOutSuccess = function () {
   store.user = null
   userEvents.clearContent()
+
+  // Close toggle menu (Mobile View)
+  $('.navbar-toggle').hasClass('collapsed') ? 
+    '' : $('.navbar-toggle').click()
+
   $('.wrapper').css('display', 'none')
   $('.main').css('display', 'block')
   $('.navbar').toggle('display')

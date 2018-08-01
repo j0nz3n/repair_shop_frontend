@@ -2,18 +2,21 @@
 
 const store = require('../scripts/store')
 const myDevicesTemplate = require('../scripts/templates/myDevicesTemplate.handlebars')
+const myRepairsTemplate = require('../scripts/templates/myRepairsTemplate.handlebars')
 
 
 const myDevicesSuccess = function (data) {
     // Show only the devices thats belong to current_user and ad them to the store
-    // Is ther a way to do this on the backedend instead? new mehod
+    // Is ther a way to do this on the backedend instead? new mehod?
     let handlebarsTemplate, myDevicesHTML = {}
     for (const key in data) {
         data[key].forEach(device => {
+
             store.user.id == device.user_id ?
-                myDevicesHTML[device.id] = device :
-                ''
-            store.user.id == device.user_id ? store.devices.push(device) : ''
+                myDevicesHTML[device.id] = device : ''
+            
+            store.user.id == device.user_id ?
+                store.devices.push(device) : ''
         });
     }
     // console.log(store)
@@ -25,6 +28,7 @@ const myDevicesSuccess = function (data) {
 
 const addDeviceSuccess = (data) => {
     store.device = data.device
+    console.log(store)
 
 }
 
@@ -34,7 +38,22 @@ const editDeviceSuccess = () => {
 
 
 const myRepairsSuccess = (data) => {
-    
+    let handlebarsTemplate, myRepairsHTML = {}
+    for (const key in data) {
+        data[key].forEach(repair_order => {
+
+            store.user.id == repair_order.user_id ?
+            myRepairsHTML[repair_order.id] = repair_order : ''
+
+            store.user.id == repair_order.user_id ? 
+            store.repairs.push(repair_order) : ''
+        });
+    }
+    console.log(store)
+    handlebarsTemplate = myRepairsTemplate({
+        repair_orders: myRepairsHTML
+    })
+    $('.tmp-container').css('display', 'block').append(handlebarsTemplate)
 }
 
 const createRepairSuccess = (data) => {

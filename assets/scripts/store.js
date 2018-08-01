@@ -2,7 +2,7 @@
 
 const store = { user: Object(),
                 devices: Array(),
-                repairs: Object()
+                repairs: Array()
 }
 
 module.exports = store
