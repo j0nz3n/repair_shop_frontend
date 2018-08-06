@@ -15,21 +15,20 @@ const myDevicesSuccess = function (data) {
             store.user.id == device.user_id ?
                 myDevicesHTML[device.id] = device : ''
             
-            store.user.id == device.user_id ?
-                store.devices.push(device) : ''
+            !(device.id in store.devices) && !(store.user.id == device.user_id) ?  '' : store.devices.push(device) 
+            // store.user.id == device.user_id ?
+            //     store.devices.push(device) : ''
         });
     }
-    // console.log(store)
     handlebarsTemplate = myDevicesTemplate({
         devices: myDevicesHTML
     })
+    console.log(store)
     $('.tmp-container').css('display', 'block').append(handlebarsTemplate)
 }
 
 const addDeviceSuccess = (data) => {
     store.device = data.device
-    console.log(store)
-
 }
 
 const editDeviceSuccess = () => {
@@ -49,7 +48,7 @@ const myRepairsSuccess = (data) => {
             store.repairs.push(repair_order) : ''
         });
     }
-    console.log(store)
+    // console.log(store)
     handlebarsTemplate = myRepairsTemplate({
         repair_orders: myRepairsHTML
     })
@@ -79,35 +78,3 @@ module.exports = {
     deleteSuccess,
     failure
 }
-
-
-{/* <nav class="navbar navbar-inverse" role="navigation">
-<a class="navbar-brand" href="#">My Repair Shop</a>
-    <!-- Navbar -->
-    <div class="container">
-      <ul class="nav">
-        <br />
-        <li class="nav-li" id="home">
-          <button class="btn btn-default btn-lrg">
-            <span class="glyphicon glyphicon-home"></span>
-          </button>
-            Home
-        </li>
-        <br />
-        <li class="nav-li" id="devices">
-          <button class="btn btn-default btn-lrg">
-            <span class="glyphicon glyphicon-phone"></span>
-          </button>
-          Devices
-        </li>
-        <br />
-        <li class="nav-li" id="settings">
-          <button class="btn btn-default btn-lrg">
-            <span class="glyphicon glyphicon-cog"></span>
-          </button>
-          Settings
-        </li>
-        <br />
-      </ul>
-    </div>
-</nav> */}

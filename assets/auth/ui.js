@@ -22,7 +22,9 @@ const changePasswordSuccess = function () {
 }
 
 const signOutSuccess = function () {
-  store.user = null
+  store.user = {}
+  store.devices = []
+  store.repairs = []
   userEvents.clearContent()
 
   // Close toggle menu (Mobile View)

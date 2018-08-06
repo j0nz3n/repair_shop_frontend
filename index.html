@@ -85,21 +85,10 @@
     <!-- /.container-fluid -->
   </nav>
 
-  <!-- <div class="main"> -->
-
   <div class="content">
 
+    <!-- Temp Container -->
     <div class="tmp-container"></div>
-
-    <!-- Settings  -->
-    <!-- <div class="wrapper wrapper-settings">
-      <h1>Settings</h1>
-      <hr>
-      <ul>
-        <li id="change-pw">Change Password</li>
-        <li id="sign-out">Sign out</li>
-      </ul>
-    </div> -->
 
     <!-- Devices  -->
     <div class="wrapper wrapper-devices">
@@ -124,8 +113,8 @@
     <!-- Change Password -->
     <div class="wrapper wrapper-change-pw">
       <form id="change-password" class="border">
-        <input type="password" name="passwords[old]" placeholder="Current Password">
-        <input type="password" name="passwords[new]" placeholder="New Password">
+        <input type="password" name="passwords[old]" placeholder="Current Password" required>
+        <input type="password" name="passwords[new]" placeholder="New Password" required>
         <input type="submit" value="Change Password">
       </form>
     </div>
@@ -135,9 +124,9 @@
       <h1>Add a New Device</h1>
       <hr>
       <form id="add-device-form" class="border">
-        <input type="text" name="device[make]" placeholder="Make">
-        <input type="text" name="device[model]" placeholder="Model">
-        <input type="text" name="device[serial_number]" placeholder="Serial Number">
+        <input type="text" name="device[make]" placeholder="Make" required>
+        <input type="text" name="device[model]" placeholder="Model" required>
+        <input type="text" name="device[serial_number]" placeholder="Serial Number" required>
         <input type="submit" value="Add Device">
       </form>
     </div>
@@ -147,9 +136,9 @@
       <h1>Update Device Information</h1>
       <hr>
       <form id="edit-device-form" class="border">
-        <input type="text" name="device[make]" placeholder="Make">
-        <input type="text" name="device[model]" placeholder="Model">
-        <input type="text" name="device[serial_number]" placeholder="Serial Number">
+        <input type="text" name="device[make]" value="device[make]" required>
+        <input type="text" name="device[model]" value="device[model]" required>
+        <input type="text" name="device[serial_number]" value="device[serial_number]" required>
         <input type="submit" value="Edit Device">
       </form>
     </div>
@@ -168,10 +157,6 @@
 
 
   </div>
-
-
-
-  <!-- </div> -->
 
 </body>
 

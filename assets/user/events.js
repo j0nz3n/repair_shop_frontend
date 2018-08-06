@@ -37,6 +37,7 @@ const onSignOut = function (event) {
 
 // DEVICES
 const onShowDevices = () => {
+    debugger
     clearContent()
     $('.wrapper-devices').css('display', 'block')
 }
